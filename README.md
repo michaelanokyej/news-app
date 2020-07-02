@@ -1,66 +1,46 @@
-## Hacker News App
+# Hacker News App
 
-In the project directory, you can run:
+#### Problem
 
-### `npm start`
+> Building a news reader app which displays the latest Hacker News stories. The app will leverage the Hacker News API to fetch the data it requires. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Requirements
+> The app will be a single page web application with the following features:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> The app will display a list of the latest Hacker News stories in descending order from newest to oldest. 
+> Each list item should show the title (which should link to the story), author name, and posted time.
+> The targeted users for this app are exceptionally inpatient, so the app needs to display each story list item as soon as it has been fetched.  
+> The app should support infinite scroll (like a social media feed). Specifically, when the user reaches the bottom of the page, the app should fetch earlier items and display them.
+> The app should support offline capability. Specifically, the user should be able to use the app offline to check out the list.
+> You can assume that the app will only be run on modern browsers, hence, feel free to use latest web spec.
+> The resulting list will look like it is populating new items one-by-one, as seen below:
+> ![Hacker News Example](public/hacker-new-example.gif"Hacker News Example gif")
 
-### `npm test`
+#### Technology Used
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> React, JavaScript, CSS, NPM
+> [Check out News App](https://michaelanokye.com/ "Link to News App").
 
-### `npm run build`
+## Landing Screen
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> News app welcomes user to a screen with the lastest news
+> from the Hacker News API.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> ![Hacker News API Screen](public/news-app.png "Youtube Clone Landingpage screenshot")
 
-### `npm run eject`
+## Set up
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Complete the following steps to start a new project (NEW-PROJECT-NAME):
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone this repository to your local machine `git clone NEWS-APP-URL NEW-PROJECTS-NAME`
+2. `cd` into the cloned repository
+3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
+4. Install the node dependencies `npm install`
+6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Scripts
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Start the application `npm start`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+2. Run the tests `npm test`

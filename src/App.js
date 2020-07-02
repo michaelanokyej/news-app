@@ -14,20 +14,27 @@ class App extends Component {
       loading: true,
       hasMore: false,
       renderedIndexes: 0,
-      pagination: 0
+      pagination: 0,
+      isLastShowing: false
     };
     this.intersectionObserver = new IntersectionObserver((entries) => {
       const ratio = entries[0].intersectionRatio;
       if ( ratio > 0 && this.state.hasMore) {
         console.log("last div showing and has more to fetch");
+        // this.setState({ isLastShowing: true })
         this.fetchNewStories(this.state.renderedIndexes + 50);
       }
     });
   }
 
+  // componentDidUpdate = async () => {
+  //   console.log("componentDidUpdate ran")
+  //   this.fetchNewStories(this.state.renderedIndexes + 50);
+  //   this.setState({ isLastShowing: false })
+  // }
+
   componentDidMount = async () => {
     await this.fetchNewStories(50);
-    this.setState({pagination: 1})
     this.intersectionObserver.observe(this.myref.current);
   };
 
@@ -118,14 +125,14 @@ class App extends Component {
   };
 
   render() {
-    // console.log("new stories in state:", this.state.newStories);
-    // console.log("renderedIndexes:", this.state.renderedIndexes);
+    console.log("new stories in state:", this.state.newStories);
+    console.log("renderedIndexes:", this.state.renderedIndexes);
 
     const content = 
       this.state.newStories.map((article, i) => {
         if (this.state.newStories.length === i + 1) {
           console.log("last div title:", article.title);
-          console.log("reference:", this.myref);
+          console.log("reference:", this.myref.current);
           return (
             <div key={i} ref={this.myref} className="news__story-Div">
               <p>posted by {" "} {article.by}</p>
