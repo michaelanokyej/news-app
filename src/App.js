@@ -111,42 +111,39 @@ class App extends Component {
   };
 
   render() {
-    const showMainContent = this.state.isLoading ? "main__content-Div" : "main__content-Div-hidden"
-
     const content = this.state.newStories.map((article, i) => {
-        if (this.state.newStories.length === i + 1) {
-          return (
-            <div key={i} ref={this.myref} className="news__story-Div">
-              <p>posted by {article.by}</p>
-              <h4 className="news__story-Div-article">
-                <a href={article.url} rel="noopener">
-                  {article.title}
-                </a>
-              </h4>
-
-              <p>posted at {new Date(article.time * 1000).toLocaleString()}</p>
-            </div>
-          );
-        } else {
-          return (
-            <div key={i} className="news__story-Div">
-              <p>posted by {article.by}</p>
-              <h4 className="news__story-Div-article">
-                <a href={article.url} rel="noopener">
-                  {article.title}
-                </a>
-              </h4>
-              <p>posted at {new Date(article.time * 1000).toLocaleString()}</p>
-            </div>
-          );
-        }
-      })
+      if (this.state.newStories.length === i + 1) {
+        return (
+          <li key={i} ref={this.myref} className="news__story-li">
+            <p>posted by {article.by}</p>
+            <h4 className="news__story-li-article">
+              <a href={article.url} rel="noopener">
+                {article.title}
+              </a>
+            </h4>
+            <p>posted at {new Date(article.time * 1000).toLocaleString()}</p>
+          </li>
+        );
+      } else {
+        return (
+          <li key={i} className="news__story-li">
+            <p>posted by {article.by}</p>
+            <h4 className="news__story-li-article">
+              <a href={article.url} rel="noopener">
+                {article.title}
+              </a>
+            </h4>
+            <p>posted at {new Date(article.time * 1000).toLocaleString()}</p>
+          </li>
+        );
+      }
+    });
 
     return (
       <div className="App">
         <h1 className="App__title">News App</h1>
         {this.state.isLoading && <Spinner />}
-        <div className={showMainContent}>{content}</div>
+        <ul className="main__content-ul">{content}</ul>
       </div>
     );
   }

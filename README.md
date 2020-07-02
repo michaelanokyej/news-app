@@ -22,7 +22,7 @@
 
 #### Technology Used
 
-> React, JavaScript, CSS, NPM
+> React, JavaScript, CSS, NPM and Enzyme.
 > [Check out News App](https://michaelanokye.com/ "Link to News App").
 
 ## Landing Screen

@@ -14,33 +14,36 @@
   background: rgb(49, 48, 48);
 }
 
-.news__story-Div {
+
+.main__content-ul {
+  margin: 0;
+  padding: 0;
+}
+
+.news__story-li {
   padding: 8px;
   border-left: 10px groove rgb(236, 233, 233);
   border-bottom: 0.5px groove rgb(236, 233, 233);
   text-align: start;
   margin-bottom: 5px;
+  list-style: none;
 }
 
-.news__story-Div p {
+.news__story-li p {
   color: rgb(146, 141, 141);
   margin: 0;
   padding: 4px;
 }
 
-.news__story-Div-article {
+.news__story-li-article {
   margin: 0;
   padding: 4px;
   color: rgb(236, 233, 233);
 }
 
-.news__story-Div-article a{
+.news__story-li-article a{
   text-decoration: none;
   color: rgb(236, 233, 233);
   cursor: pointer;
   margin: 0;
-}
-
-.hidden {
-  display: none;
 }
