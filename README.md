@@ -14,6 +14,10 @@
 > The app should support offline capability. Specifically, the user should be able to use the app offline to check out the list.
 > You can assume that the app will only be run on modern browsers, hence, feel free to use latest web spec.
 > The resulting list will look like it is populating new items one-by-one, as seen below:
+
+
+
+
 > ![Hacker News Example](public/hacker-new-example.gif "Hacker News Example gif")
 
 #### Technology Used
