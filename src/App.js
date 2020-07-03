@@ -11,6 +11,7 @@ class App extends Component {
     this.myref = React.createRef();
     this.state = {
       newStories: [],
+      storiesIds: [],
       loading: true,
       hasMore: false,
       renderedIndexes: 0,
@@ -25,9 +26,23 @@ class App extends Component {
     });
   }
 
+  componentWillMount = () => {
+    if (
+      localStorage.getItem("news-app-stories") &&
+      JSON.parse(localStorage.getItem("news-app-stories")).length !== 0
+    ) {
+      this.setState({
+        newStories: JSON.parse(localStorage.getItem("news-app-stories")),
+        isLoading: false,
+      });
+    }
+  };
+
   componentDidMount = async () => {
-    await this.fetchNewStories(50);
+    if (!localStorage.getItem("news-app-stories")){
+      await this.fetchNewStories(50);
     this.intersectionObserver.observe(this.myref.current);
+    }
   };
 
   componentWillUnmount = () => {
@@ -109,6 +124,10 @@ class App extends Component {
       };
     });
   };
+
+componentWillUpdate = (nextProps, nextState) => {
+  localStorage.setItem ("news-app-stories", JSON.stringify(nextState.newStories));
+}
 
   render() {
     const content = this.state.newStories.map((article, i) => {
